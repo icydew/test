@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <title>webpack-start</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="main-info">
+    <div class="main-info__ava"></div>
+    <div class="main-info__user-info">
+      <div class="main-info__user-info_name">Вероника Ростова</div>
+      <div class="main-info__user-info_position">Менеджер по продажам</div>
+      <div class="main-info__user-info_status">Подберу для вас самые лучшие предложения.<br> Мои услуги абсолютно
+        бусплатны
+      </div>
+      <div class="main-info__user-info_services">
+        <div class="title"><p>Услуг</p></div>
+        <div class="table">
+          <div class="services">
+            <div class="services_name">Ручное бронирование</div>
+            <div class="services_number">11</div>
+          </div>
+          <div class="services">
+            <div class="services_name">Пакетные туры</div>
+            <div class="services_number">3</div>
+          </div>
+          <div class="services">
+            <div class="services_name">Отели</div>
+            <div class="services_number">1</div>
+          </div>
+          <div class="title">
+            <div>Всего</div>
+            <div>15</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-reviews">
+    <div class="main-reviews__header">
+      <div class="tittle">
+        <h1>Последние отзывы</h1>
+        <a href="">Все отзывы</a>
+      </div>
+      <div class="info">
+        <div class="like">
+          <svg class="icon">
+            <use xlink:href="sprite.svg#like"></use>
+          </svg>
+          <p>131</p>
+        </div>
+        <div class="chat">
+          <svg class="icon">
+            <use xlink:href="sprite.svg#chat"></use>
+          </svg>
+          <p>14</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-reviews__comments">
+      <div class="main-reviews__comments_comment">
+        <div class="tittle">
+          <p class="name-author">Самуил</p>
+          <p class="data">13 октября 2011</p>
+        </div>
+        <div class="comment">
+          <p>Привет, Верунь! ниче себе ты крутая. фотка класс!!!!</p>
+          <div class="triangle-border"></div>
+          <div class="triangle-body"></div>
+        </div>
+      </div>
+      <div class="main-reviews__comments_comment">
+        <div class="tittle">
+          <p class="name-author">Лилия Семёновна</p>
+          <p class="data">14 октября 2011</p>
+        </div>
+        <div class="comment">
+          <p>Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент, это
+            и есть всемирно известный центр огранки алмазов и торговли бриллиантами?</p>
+          <div class="triangle-border"></div>
+          <div class="triangle-body"></div>
+        </div>
+      </div>
+      <div class="main-reviews__comments_comment">
+        <div class="tittle">
+          <p class="name-author">Лилия Семёновна</p>
+          <p class="data">14 октября 2011</p>
+        </div>
+        <div class="comment">
+          <p>Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?</p>
+          <div class="triangle-border"></div>
+          <div class="triangle-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-add-comment">
+      <form>
+        <div><textarea name="text"></textarea></div>
+        <div class="button"><a href="javascript:void(0)" class="submit">Написать консультанту</a></div>
+      </form>
+      <div class="main-reviews__comments_comment">
+        <div class="tittle">
+          <p class="name-author">Я</p>
+          <p class="data">14 октября 2011</p>
+        </div>
+        <div class="comment">
+          <p class="text"></p>
+          <div class="triangle-border"></div>
+          <div class="triangle-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(function() {
+    $(document).on('click', '.submit', function() {
+      var $template = $('.section-add-comment .main-reviews__comments_comment').clone();
+      var $textarea = $('.section-add-comment textarea');
+      $template.find('.text').html($textarea.val());
+      $template.appendTo('.main-reviews__comments');
+      $textarea.val('');
+    });
+  });
+</script>
+
+<script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="app.js"></script></body>
+</html>
